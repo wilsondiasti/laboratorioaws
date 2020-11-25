@@ -1,0 +1,7 @@
+# Configurações
+server.port: 5601
+server.host: "elasticX"
+server.name: "elasticX"
+elasticsearch.hosts: ["http://elasticX:9200"]
+elasticsearch.requestTimeout: 90000
+logging.dest: /webtools/kibana/logs/kibana.log
