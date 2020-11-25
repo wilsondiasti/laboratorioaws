@@ -1,0 +1,68 @@
+=> Acesse o Host "elastic0" via SSH e use os comandos abaixo como usuário 'ubuntu':
+
+1 - Fazendo download dos Pacotes Elastic Stack:
+  
+  cd /webtools
+  mkdir install
+  cd install/
+  wget -q https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.10.0-linux-x86_64.tar.gz
+  wget -q https://artifacts.elastic.co/downloads/kibana/kibana-7.10.0-linux-x86_64.tar.gz
+  
+2 - Descompactando os arquivos e preparando o ambiente:
+
+  cd /webtools/install
+  tar -xf elasticsearch-7.10.0-linux-x86_64.tar.gz
+  tar -xf kibana-7.10.0-linux-x86_64.tar.gz
+  mv elasticsearch-7.10.0 /webtools/
+  mv kibana-7.10.0-linux-x86_64 /webtools/
+
+3 - Criando Links Simbólicos:
+  
+  cd /webtools
+  ln -s /webtools/elasticsearch-7.10.0 elastic
+  ln -s /webtools/kibana-7.10.0-linux-x86_64 kibana
+  ln -s /webtools/elastic/jdk java
+
+4 - Exportando o JAVA:
+  
+  JAVA_HOME=/webtools/java
+  export JAVA_HOME=/webtools/java
+  echo "JAVA_HOME=/webtools/java" >> /home/ubuntu/.bash_profile
+  echo "export JAVA_HOME" >> /home/ubuntu/.bash_profile
+  echo $JAVA_HOME
+  
+5 - Configurando o arquivo elasticseach.yml:
+
+  cd /webtools/elastic/config
+  cp elasticsearch.yml elasticsearch.yml_BKP
+  > elasticsearch.yml
+  
+  vim elasticsearch.yml
+		
+		[ Agora cole o conteúdo enviado por e-mail contido em "elasticseach.yml" ]
+		[ Lembre-se de substituir o "X" pelo valor correspondente ao HOST. ]
+
+6 - Configurando o arquivo jvm.options do Elasticsearch:
+
+  cd /webtools/elastic/config
+  cp jvm.options jvm.options_BKP
+  > jvm.options
+  
+  vim jvm.options
+  
+		[ Agora cole o conteúdo enviado por e-mail contido em "jvm.options". ]
+
+7 - Inicie o processo do Elasticsearch no HOST:
+
+  /webtools/elastic/bin/elasticsearch --quiet > /dev/null &
+
+8 - Realize o teste do serviço pelo browser, invocando a URL abaixo:
+
+  http://ec2-3-80-155-32.compute-1.amazonaws.com:9200
+
+  * Podemos também fazer o teste pelo próprio terminal do Host com o comando 'curl':
+
+  curl http://ec2-3-80-155-32.compute-1.amazonaws.com:9200
+  
+  
+		!! FAÇA TODOS OS PASSOS ACIMA NOS HOSTS elastic1 e elastic2 !!

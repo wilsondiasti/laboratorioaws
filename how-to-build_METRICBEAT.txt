@@ -1,0 +1,44 @@
+=> Acesse o Host "server0" via SSH e use os comandos abaixo como usuário 'ubuntu':
+
+1 - Fazendo download dos Pacotes Elastic Stack:
+  
+  cd /webtools
+  mkdir install
+  cd install/
+  wget -q https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.10.0-linux-x86_64.tar.gz
+  
+2 - Descompactando os arquivos e preparando o ambiente:
+
+  cd /webtools/install
+  tar -xf metricbeat-7.10.0-linux-x86_64.tar.gz
+  mv metricbeat-7.10.0-linux-x86_64 /webtools/
+  
+3 - Criando Links Simbólicos:
+  
+  cd /webtools
+  ln -s /webtools/metricbeat-7.10.0-linux-x86_64 metricbeat
+
+5 - Configurando o arquivo metricbeat.yml:
+
+  cd /webtools/metricbeat
+  cp metricbeat.yml metricbeat.yml_BKP
+  > metricbeat.yml
+  
+  vim metricbeat.yml
+		
+		[ Agora cole o conteúdo enviado por e-mail contido em "metricbeat.yml" ]
+  
+6 - Teste o arquivo de configuração do Metricbeat:
+
+  cd /webtools/metricbeat
+  ./metricbeat test config
+  
+7 - Instale os Dashboards padrões do Metricbeat
+
+  cd /webtools/metricbeat
+  ./metricbeat setup -e
+
+ - Inicie o processo do Metricbeat
+  /webtools/metricbeat/metricbeat -e -c /webtools/metricbeat/metricbeat.yml &
+
+8 - Após o passo de inicialização, vá até o Kibana e explore as métricas coletadas.
