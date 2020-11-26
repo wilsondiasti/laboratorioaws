@@ -6,20 +6,17 @@
   mkdir install
   cd install/
   wget https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.10.0-linux-x86_64.tar.gz
-  wget https://artifacts.elastic.co/downloads/logstash/logstash-7.10.0-linux-x86_64.tar.gz
-  
+    
 2 - Descompactando os arquivos e preparando o ambiente:
 
   cd /webtools/install
   tar -xvf metricbeat-7.10.0-linux-x86_64.tar.gz -C /webtools/
-  tar -xvf logstash-7.10.0-linux-x86_64.tar.gz -C /webtools/
-  
+    
 3 - Criando Links Simbólicos:
   
   cd /webtools
   ln -s /webtools/metricbeat-7.10.0-linux-x86_64 metricbeat
-  ln -s /webtools/logstash-7.10.0 logstash
-
+  
 5 - Configurando o arquivo metricbeat.yml:
 
   cd /webtools/metricbeat
