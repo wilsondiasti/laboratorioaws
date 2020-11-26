@@ -1,42 +1,47 @@
-=> Acesse o Host "server0" via SSH e use os comandos abaixo como usuário 'ubuntu':
+1 - Fazendo download do Logstash:
 
-1 - Fazendo download do Logstash e do JAVA:
-  
   cd /webtools/install/
   wget https://artifacts.elastic.co/downloads/logstash/logstash-7.10.0-linux-x86_64.tar.gz
-  wget java
-  
-  
-2 - Descompactando os arquivos baixados:
+
+
+2 - Descompactando o arquivo baixado:
 
   tar -xvf logstash-7.10.0-linux-x86_64.tar.gz -C /webtools/
-  tar -xvf java -C /webtools/
-  
-  
-3 - Criando Links Simbólicos:
-  
+
+
+3 - Criando Link Simbólico:
+
   cd /webtools
-  ln -s /webtools/java java
+  ln -s /webtools/logstash/jdk java
   ln -s /webtools/logstash-7.10.0 logstash
 
 
 4 - Exportando o JAVA:
-  
+
   echo "export JAVA_HOME=/webtools/java" >> /home/ubuntu/.profile
   export JAVA_HOME=/webtools/java
   echo $JAVA_HOME
+
+
+5 - Baixado logs de exemplo:
+
+  mkdir -p /webtools/apache/logs
+  cd /webtools/install/
+  wget http://www.siteasap.com.br/elastic/logs_apache.tgz
+  tar -xvf logs_apache.tgz -C /webtools/apache/logs
+  ls -l /webtools/apache/logs
   
-  
-5 - Configurando o arquivo logstash.conf:
+
+6 - Configurando o arquivo logstash.conf:
 
   cd /webtools/logstash/config
   vim logstash.conf
-		
+
 		[ Agora cole o conteúdo contido em: https://github.com/wilsondiasti/laboratorioaws/blob/main/logstash.conf ]
-		[ Lembre-se de substituir o "DIRETORIO" e "SERVIDOR" com o caminho do log e endereço do Elasticsearch. ]
-    
-    
-6 - Inicie o processo do Logstash no HOST:
+		[ Lembre-se de substituir o "DIRETORIO" e "SERVIDOR" com o caminho dos logs e endereço do Elasticsearch. ]
+  
+
+7 - Inicie o processo do Logstash no HOST:
 
   cd /webtools/logstash
   ./bin/logstash -f config/logstash.conf &
