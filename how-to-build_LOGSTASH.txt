@@ -25,11 +25,11 @@
 
 5 - Baixado logs de exemplo:
 
-  mkdir -p /webtools/apache/logs
+  mkdir /webtools/apache
   cd /webtools/install/
   wget http://www.siteasap.com.br/elastic/logs_apache.tgz
-  tar -xvf logs_apache.tgz -C /webtools/apache/logs
-  ls -l /webtools/apache/logs
+  tar -xvf logs_apache.tgz -C /webtools/apache/
+  ls -l /webtools/apache/logs/
   
 
 6 - Configurando o arquivo logstash.conf:
