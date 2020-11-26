@@ -26,9 +26,7 @@
 
 4 - Exportando o JAVA:
   
-  > /home/ubuntu/.bash_profile
-  echo -e "# .bash_profile \n\n# Get the aliases and functions \nif [ -f ~/.bashrc ]; then \n  . ~/.bashrc \nfi \n\n" >> /home/ubuntu/.bash_profile
-  echo "export JAVA_HOME=/webtools/java" >> /home/ubuntu/.bash_profile
+  echo "export JAVA_HOME=/webtools/java" >> /home/ubuntu/.profile
   export JAVA_HOME=/webtools/java
   echo $JAVA_HOME
   
