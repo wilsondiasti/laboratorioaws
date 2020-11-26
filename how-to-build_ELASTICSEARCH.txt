@@ -7,23 +7,20 @@
   cd install/
   wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.10.0-linux-x86_64.tar.gz
   wget https://artifacts.elastic.co/downloads/kibana/kibana-7.10.0-linux-x86_64.tar.gz
-  wget https://artifacts.elastic.co/downloads/logstash/logstash-7.10.0-linux-x86_64.tar.gz
-  
+    
 2 - Descompactando os arquivos e preparando o ambiente:
 
   cd /webtools/install
   tar -xvf elasticsearch-7.10.0-linux-x86_64.tar.gz -C /webtools/
   tar -xvf kibana-7.10.0-linux-x86_64.tar.gz -C /webtools/
-  tar -xvf logstash-7.10.0-linux-x86_64.tar.gz -C /webtools/
-  
+    
 3 - Criando Links Simbólicos:
   
   cd /webtools
   ln -s /webtools/elasticsearch-7.10.0 elastic
   ln -s /webtools/kibana-7.10.0-linux-x86_64 kibana
   ln -s /webtools/elastic/jdk java
-  ln -s /webtools/logstash-7.10.0 logstash
-
+  
 4 - Exportando o JAVA:
   
   echo "export JAVA_HOME=/webtools/java" >> /home/ubuntu/.profile
