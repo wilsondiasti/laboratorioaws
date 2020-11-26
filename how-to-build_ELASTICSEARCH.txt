@@ -53,15 +53,16 @@ cat jvm.options
   tail -f /webtools/elastic/logs/ELK_AWS.log
   
   	Após apresentar o "started" vamos conferir a porta de serviço com o comando:
+	
   netstat -nat | grep 9200
 
 	Pelo browser, invocando a URL abaixo:
 
-  http://ec2-3-80-155-32.compute-1.amazonaws.com:9200
+  http://ec2-X-XX-XXX-XX.compute-1.amazonaws.com:9200
 
   * Podemos também fazer o teste pelo próprio terminal do Host com o comando 'curl':
 
-  curl http://ec2-3-80-155-32.compute-1.amazonaws.com:9200
+  curl http://ec2-X-XX-XXX-XX.compute-1.amazonaws.com:9200
   
   
 		!! FAÇA TODOS OS PASSOS ACIMA NOS HOSTS elastic1 e elastic2 !!
