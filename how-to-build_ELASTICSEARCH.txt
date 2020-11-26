@@ -48,7 +48,14 @@ cat jvm.options
 
   /webtools/elastic/bin/elasticsearch -d
 
-8 - Realize o teste do serviço pelo browser, invocando a URL abaixo:
+8 - Realize o teste do serviço:
+
+  tail -f /webtools/elastic/logs/ELK_AWS.log
+  
+  	Após apresentar o "started" vamos conferir a porta de serviço com o comando:
+  netstat -nat | grep 9200
+
+	Pelo browser, invocando a URL abaixo:
 
   http://ec2-3-80-155-32.compute-1.amazonaws.com:9200
 
