@@ -22,13 +22,14 @@
   ln -s /webtools/elasticsearch-7.10.0 elastic
   ln -s /webtools/kibana-7.10.0-linux-x86_64 kibana
   ln -s /webtools/elastic/jdk java
+  ln -s /webtools/logstash-7.10.0 logstash
 
 4 - Exportando o JAVA:
   
-  JAVA_HOME=/webtools/java
+  > /home/ubuntu/.bash_profile
+  echo -e "# .bash_profile \n\n# Get the aliases and functions \nif [ -f ~/.bashrc ]; then \n  . ~/.bashrc \nfi \n\n" >> /home/ubuntu/.bash_profile
+  echo "export JAVA_HOME=/webtools/java" >> /home/ubuntu/.bash_profile
   export JAVA_HOME=/webtools/java
-  echo "JAVA_HOME=/webtools/java" >> /home/ubuntu/.bash_profile
-  echo "export JAVA_HOME" >> /home/ubuntu/.bash_profile
   echo $JAVA_HOME
   
 5 - Configurando o arquivo elasticseach.yml:
