@@ -38,7 +38,7 @@
   
   vim elasticsearch.yml
 		
-		[ Agora cole o conteúdo enviado por e-mail contido em "elasticseach.yml" ]
+		[ Agora cole o conteúdo contido no link: https://github.com/wilsondiasti/laboratorioaws/blob/main/elasticsearch.yml ]
 		[ Lembre-se de substituir o "X" pelo valor correspondente ao HOST. ]
 
 6 - Configurando o arquivo jvm.options do Elasticsearch:
