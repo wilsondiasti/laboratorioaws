@@ -18,11 +18,11 @@
 		
 2 - Inicie o processo do Elasticsearch no HOST:
 
-  /webtools/kibana/bin/kibana & > /dev/null 2>&1
+  /webtools/kibana/bin/kibana -q &
   
 3 - Realize o teste do serviço pelo browser, invocando a URL abaixo:
 
-  http://ec2-3-80-155-32.compute-1.amazonaws.com:5601
+  http://ec2-X-XX-XXX-XX.compute-1.amazonaws.com:5601
   
   
 		!! FAÇA TODOS OS PASSOS ACIMA NOS HOSTS elastic1 e elastic2 !!
