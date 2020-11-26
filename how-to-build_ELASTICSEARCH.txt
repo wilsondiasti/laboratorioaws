@@ -12,12 +12,10 @@
 2 - Descompactando os arquivos e preparando o ambiente:
 
   cd /webtools/install
-  tar -xvf elasticsearch-7.10.0-linux-x86_64.tar.gz
-  tar -xvf kibana-7.10.0-linux-x86_64.tar.gz
-  tar -xvf logstash-7.10.0-linux-x86_64.tar.gz
-  mv elasticsearch-7.10.0 /webtools/
-  mv kibana-7.10.0-linux-x86_64 /webtools/
-
+  tar -xvf elasticsearch-7.10.0-linux-x86_64.tar.gz -C /webtools/
+  tar -xvf kibana-7.10.0-linux-x86_64.tar.gz -C /webtools/
+  tar -xvf logstash-7.10.0-linux-x86_64.tar.gz -C /webtools/
+  
 3 - Criando Links Simbólicos:
   
   cd /webtools
