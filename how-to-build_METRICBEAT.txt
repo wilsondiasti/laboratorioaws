@@ -25,7 +25,7 @@
   
   vim metricbeat.yml
 		
-		[ Agora cole o conteúdo enviado por e-mail contido em "metricbeat.yml" ]
+		[ Agora cole o conteúdo contido em: https://github.com/wilsondiasti/laboratorioaws/blob/main/metricbeat.yml ]
   
 6 - Teste o arquivo de configuração do Metricbeat:
 
