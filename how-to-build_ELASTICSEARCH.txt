@@ -46,7 +46,7 @@ cat jvm.options
 	
 7 - Inicie o processo do Elasticsearch no HOST:
 
-  /webtools/elastic/bin/elasticsearch --quiet > /dev/null &
+  /webtools/elastic/bin/elasticsearch -d
 
 8 - Realize o teste do serviço pelo browser, invocando a URL abaixo:
 
