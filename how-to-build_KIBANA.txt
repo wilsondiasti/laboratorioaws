@@ -8,7 +8,7 @@
   
   vim kibana.yml
 		
-		[ Agora cole o conteúdo enviado por e-mail contido em "kibana.yml" ]
+		[ Agora cole o conteúdo contido em: https://github.com/wilsondiasti/laboratorioaws/blob/main/kibana.yml ]
 		[ Lembre-se de substituir o "X" pelo valor correspondente ao HOST. ]
 
 2 - Crie o diretório de Logs do Kibana:
