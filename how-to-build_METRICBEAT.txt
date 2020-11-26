@@ -39,6 +39,8 @@
   ./metricbeat setup -e
 
  - Inicie o processo do Metricbeat
-  /webtools/metricbeat/metricbeat -e -c /webtools/metricbeat/metricbeat.yml &
+  /webtools/metricbeat/metricbeat -c /webtools/metricbeat/metricbeat.yml &
 
 8 - Após o passo de inicialização, vá até o Kibana e explore as métricas coletadas.
+
+
