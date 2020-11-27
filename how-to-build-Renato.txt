@@ -1,39 +1,35 @@
 Em cada um dos servidores
-Acesse o Host via SSH e use os comandos abaixo:
+Acesse o Host via SSH e use os comandos abaixo, e lembre-se de substituir o "X" pelo valor correspondente:
 
-sudo su -
+1 - Adicionando hosts no /etc/hosts
 
-echo "172.31.X.X elastic0" >> /etc/hosts
-echo "172.31.X.X elastic1" >> /etc/hosts
-echo "172.31.X.X elastic2" >> /etc/hosts
-echo "172.31.X.X elastic2"  >> /etc/hosts
+  sudo su -
 
+  echo "172.31.X.X elastic0" >> /etc/hosts
+  echo "172.31.X.X elastic1" >> /etc/hosts
+  echo "172.31.X.X elastic2" >> /etc/hosts
+  echo "172.31.X.X server0"  >> /etc/hosts
 
-Vamos preparar as maquinas, e lembre-se de substituir o "X" pelo valor correspondente!
-
+2 - Instalando ferramentas:
   
-apt install net-tools
-
-hostnamectl set-hostname elasticX
+  apt install net-tools -y
+  hostnamectl set-hostname elasticX
+  hostnamectl set-hostname server0
   
-cd / && mkdir webtools
+3 - Criando ditetório de instalação dos Beats:
+
+  cd / && mkdir webtools
+  chown -R ubuntu:ubuntu webtools
   
-chown -R ubuntu:ubuntu webtools
+4 - Inserir entradas no arquivo /etc/security/limits.conf (Pré requisito do produto)
+ 
+  echo "* soft nofile 65536" >> /etc/security/limits.conf 
+  echo "* hard nofile 65536" >> /etc/security/limits.conf 
   
-###Inserir entradas no arquivo (Pré requisito do produto)
+5 - Inserir entradas no arquivo /etc/sysctl.conf (Pré requisito do produto)
 
-vim /etc/security/limits.conf 
+  echo "vm.max_map_count=262144" >> /etc/sysctl.conf
 
+6 - Reiniciar o host
 
-#Configurações para o ELK - Colar conteúdo abaixo
-* soft nofile 65536
-* hard nofile 65536
-  
-
-###Inserir entradas no arquivo (Pré requisito do produto)
-vim /etc/sysctl.conf 
-
-#Configurações para o ELK - Colar conteúdo abaixo
-vm.max_map_count=262144
-
-reboot
+  reboot
