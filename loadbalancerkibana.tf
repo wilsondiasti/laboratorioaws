@@ -21,7 +21,7 @@ resource "aws_elb" "bar" {
   }
 
 #Necessário capturar as informações na console
-  instances                   = ["i-0ec114b1e29bd005b","i-08de1c6b63e8318bc","i-01cdf65eec3818f93"]
+  instances                   = ["i-0xxx","i-08xxx","i-01cxxx"]
   cross_zone_load_balancing   = true
   idle_timeout                = 400
   connection_draining         = true
